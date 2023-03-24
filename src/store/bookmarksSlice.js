@@ -7,8 +7,10 @@ const bookmarksSlice = createSlice({
   initialState,
   reducers: {
     addBookmark(state, action) {
-      state.push(action.payload);
-      localStorage.setItem("bookmarks", JSON.stringify(state));
+      if (!state.some((bookmark) => bookmark._id === action.payload._id)) {
+        state.push(action.payload);
+        localStorage.setItem("bookmarks", JSON.stringify(state));
+      }
     },
     removeBookmark(state, action) {
       const newState = state.filter(

@@ -1,0 +1,18 @@
+.quote-container {
+    background: #D05252;
+    border-radius: 30px;
+}
+
+.author-container {
+    display: flex;
+}
+
+.quote-author {
+    margin: 1rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.bookmark-btn {
+    margin: 1rem;
+}
