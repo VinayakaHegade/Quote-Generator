@@ -3,6 +3,7 @@
 ## Demo
 [![Quote-Generator](https://img.shields.io/badge/Tryit-(here)-blue.svg)](https://trelloboard.vercel.app/)
 ![demo](./public/assets/Quote-generator.png)
+![demo](./public/assets/Quote-bookmarks.png)
 
 
   
