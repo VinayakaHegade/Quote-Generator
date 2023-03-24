@@ -1,6 +1,14 @@
 .quote-container {
+    text-align: center;
+    width: fit-content;
     background: #D05252;
     border-radius: 30px;
+    margin: 0 auto 2rem;
+}
+
+.quote-content {
+    text-align: center;
+    padding: 2rem;
 }
 
 .author-container {
@@ -8,11 +16,71 @@
 }
 
 .quote-author {
-    margin: 1rem;
+    margin: 1rem 0;
     flex-grow: 1;
     text-align: center;
 }
 
 .bookmark-btn {
-    margin: 1rem;
+    margin: 1rem 2rem;
+}
+
+.bookmark-btn:hover {
+    cursor: pointer;
+    background-color: black;
+}
+
+.bookmark-btn-active {
+    margin: 1rem 2rem;
+    background-color: black;
+}
+
+.bookmark-remove-btn {
+    margin: 1rem 2rem;
+    cursor: pointer;
+}
+
+.bookmark-remove-btn:hover {
+    margin: 1rem 2rem;
+    background-color: black;
+}
+
+/* ============= BREAKPOINTS =============*/
+/* For medium devices */
+
+@media screen and (max-width: 576px) {
+    .quote-content {
+        font-size: 1.25rem;
+    }
+
+    .quote-author {
+        font-size: 0.95rem;
+    }
+
+    .bookmark-btn,
+    .bookmark-btn:hover,
+    .bookmark-btn-active,
+    .bookmark-remove-btn,
+    .bookmark-remove-btn:hover {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .quote-content {
+        font-size: 1rem;
+    }
+
+    .quote-author {
+        font-size: 0.85rem;
+    }
+
+    .bookmark-btn,
+    .bookmark-btn:hover,
+    .bookmark-btn-active,
+    .bookmark-remove-btn,
+    .bookmark-remove-btn:hover {
+        font-size: 1.15rem !important;
+    }
 }

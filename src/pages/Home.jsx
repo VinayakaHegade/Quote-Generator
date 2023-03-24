@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRandomQuote, fetchTags } from "../store/quotesSlice";
 import Quote from "../components/Quote/Quote";
-import TagList from "../components/TagList";
+import TagList from "../components/TagList/TagList";
 import Header from "../components/Header/Header";
+import Loading from "../components/Loading/Loading";
 
 const selectQuote = (state) => state.quotes.quote;
 const selectTags = (state) => state.quotes.tags;
@@ -12,17 +12,6 @@ const selectLoading = (state) => state.quotes.loading;
 const selectError = (state) => state.quotes.error;
 
 function Home() {
-  //   const [quote, setQuote] = useState(null);
-  //   const [tags, setTags] = useState([]);
-  //   const [selectedTag, setSelectedTag] = useState(null);
-  //   const [loading, setLoading] = useState(true);
-  //   const [error, setError] = useState(null);
-
-  //   useEffect(() => {
-  //     fetchRandomQuote();
-  //     fetchTags();
-  //   }, []);
-
   const dispatch = useDispatch();
   const quote = useSelector(selectQuote);
   const tags = useSelector(selectTags);
@@ -40,73 +29,32 @@ function Home() {
     dispatch(fetchRandomQuote(tag));
   };
 
-  //   const fetchRandomQuote = async (tag = null) => {
-  //     setLoading(true);
-  //     setError(null);
-  //     let url = "https://api.quotable.io/random";
-  //     if (tag) {
-  //       url += `?tags=${tag}`;
-  //     }
-  //     try {
-  //       const response = await fetch(url);
-  //       if (!response.ok) {
-  //         throw new Error(`An error occurred: ${response.statusText}`);
-  //       }
-  //       const data = await response.json();
-  //       console.log(data);
-  //       setQuote(data);
-  //     } catch (error) {
-  //       setError(error.message);
-  //     }
-  //     setLoading(false);
-  //   };
-
-  //   const fetchTags = async () => {
-  //     setLoading(true);
-  //     setError(null);
-  //     try {
-  //       const response = await fetch("https://api.quotable.io/tags");
-  //       if (!response.ok) {
-  //         throw new Error(`An error occurred: ${response.statusText}`);
-  //       }
-  //       const data = await response.json();
-  //       const tagNames = data.map((item) => item.name);
-  //       setTags(tagNames);
-  //     } catch (error) {
-  //       setError(error.message);
-  //     }
-  //     setLoading(false);
-  //   };
-
-  //   const handleTagSelect = (tag) => {
-  //     setSelectedTag(tag);
-  //     fetchRandomQuote(tag);
-  //   };
-
-  console.log(quote);
-  console.log(tags);
-
   return (
     <div>
       {loading ? (
-        <p>Loading...</p>
+        <>
+          <Loading />
+          <h1>🌀 Loading...</h1>
+        </>
       ) : error ? (
         <p>{error}</p>
       ) : (
         <>
           <Header />
-          {quote && <Quote quote={quote} />}
-          <button onClick={() => dispatch(fetchRandomQuote(selectedTag))}>
-            New Quote
-          </button>
+          {quote && <Quote quote={quote} home={true} />}
           <TagList
             selectedTag={selectedTag}
             tags={tags}
             onTagSelect={handleTagSelect}
           />
-          <Link to="/bookmarks">
-            <button>View Bookmarks</button>
-          </Link>
+          <div className="new-quote-wrapper">
+            <button
+              className="new-quote-btn"
+              onClick={() => dispatch(fetchRandomQuote(selectedTag))}
+            >
+              New Quote
+            </button>
+          </div>
         </>
       )}
     </div>

@@ -5,14 +5,51 @@
     margin-bottom: 2rem;
 }
 
-.home-text {
+.home {
+    text-decoration: none;
+    color: #FFFFFF;
     font-weight: 700;
     font-size: 2.5rem;
-    /* line-height: 3.75rem; */
 }
 
-.bookmarks-text {
+.bookmarks {
+    text-decoration: none;
+    color: #FFFFFF;
     font-weight: 300;
     font-size: 2.5rem;
-    /* line-height: 3.75rem; */
 }
+
+/* ============= BREAKPOINTS =============*/
+/* For medium devices */
+@media screen and (max-width: 768px) {
+    .home {
+        font-size: 2rem;
+    }
+
+    .bookmarks {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .home {
+            font-size: 1.5rem;
+        }
+
+        .bookmarks {
+            font-size: 1.5rem;
+        }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .home {
+        font-size: 1.2rem;
+    }
+
+    .bookmarks {
+        font-size: 1.2rem;
+    }
+}
+
+

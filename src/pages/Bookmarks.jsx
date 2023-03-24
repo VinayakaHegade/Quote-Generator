@@ -1,10 +1,10 @@
-import React from "react";
-import BookmarkList from "../components/BookmarkList";
+import BookmarkList from "../components/BookmarkList/BookmarkList";
+import Header from "../components/Header/Header";
 
 function Bookmarks() {
   return (
     <div>
-      <h1>Bookmarks</h1>
+      <Header/>
       <BookmarkList />
     </div>
   );
