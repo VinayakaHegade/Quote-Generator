@@ -1,7 +1,7 @@
 # Quote-Generator
 
 ## Demo
-[![Quote-Generator](https://img.shields.io/badge/Tryit-(here)-blue.svg)](https://trelloboard.vercel.app/)
+[![Quote-Generator](https://img.shields.io/badge/Tryit-(here)-blue.svg)](https://random-quote-daily.vercel.app)
 ![demo](./public/assets/Quote-generator.png)
 ![demo](./public/assets/Quote-bookmarks.png)
 
