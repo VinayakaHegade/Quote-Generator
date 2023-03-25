@@ -22,7 +22,7 @@
 }
 
 .bookmark-btn {
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 1rem 0;
 }
 
 .bookmark-btn:hover {
@@ -31,17 +31,17 @@
 }
 
 .bookmark-btn-active {
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 1rem 0;
     background-color: black;
 }
 
 .bookmark-remove-btn {
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 1rem 0;
     cursor: pointer;
 }
 
 .bookmark-remove-btn:hover {
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 1rem 0;
     background-color: black;
 }
 
